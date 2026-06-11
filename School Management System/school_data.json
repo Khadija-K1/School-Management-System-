@@ -1,0 +1,104 @@
+{
+     "students": {
+          "01": {
+               "name": "Sana",
+               "password": "23",
+               "class": "9",
+               "marks": {
+                    "math": {
+                         "sub_marks": "23",
+                         "Teacher": "Ali"
+                    },
+                    "eng": {
+                         "sub_marks": "78",
+                         "Teacher": "Ali"
+                    }
+               }
+          },
+          "02": {
+               "name": "Bushra",
+               "password": "345",
+               "class": "10",
+               "marks": {
+                    "urdu": {
+                         "sub_marks": "56",
+                         "Teacher": "Ali"
+                    }
+               }
+          },
+          "03": {
+               "name": "Asma",
+               "password": "345",
+               "class": "9",
+               "marks": {
+                    "math": {
+                         "sub_marks": "78",
+                         "Teacher": "Ali"
+                    },
+                    "eng": {
+                         "sub_marks": "89",
+                         "Teacher": "Ali"
+                    }
+               }
+          }
+     },
+     "classes": {
+          "9": {
+               "subjects": [
+                    "math",
+                    "eng",
+                    "cs"
+               ],
+               "students": {
+                    "01": "Sana",
+                    "03": "Asma"
+               }
+          },
+          "10": {
+               "subjects": [
+                    "bio",
+                    "urdu",
+                    "is"
+               ],
+               "students": {
+                    "02": "Bushra"
+               }
+          }
+     },
+     "teachers": {
+          "01": {
+               "name": "Ali",
+               "password": "234",
+               "assigned_classes": {
+                    "9": [
+                         "math",
+                         "eng"
+                    ],
+                    "10": [
+                         "urdu"
+                    ]
+               }
+          },
+          "02": {
+               "name": "Usman",
+               "password": "2345",
+               "assigned_classes": {
+                    "9": [
+                         "cs"
+                    ],
+                    "10": [
+                         "bio"
+                    ]
+               }
+          },
+          "03": {
+               "name": "Huzaif",
+               "password": "345",
+               "assigned_classes": {
+                    "10": [
+                         "is"
+                    ]
+               }
+          }
+     }
+}

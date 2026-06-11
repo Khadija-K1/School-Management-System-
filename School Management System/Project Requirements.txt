@@ -1,0 +1,172 @@
+﻿Python Project to Practice Procedural Programming 
+
+
+                         School Management System 
+
+
+
+
+
+
+1. System Overview
+The system has three roles:
+* Admin → Full control over the system
+* Teacher → Manages grading for assigned classes/subjects
+* Student → Views results
+Each role has separate authentication and specific permissions.
+
+
+2. Authentication Design
+Admin Login (Hardcoded)
+* Username: e.g., admin
+* Password: e.g., admin123
+* Stored directly in code (not database)
+Teacher Login
+* Login using:
+   * Teacher ID
+   * Password
+Student Login
+* Login using:
+   * Student ID
+   * Password
+
+
+
+
+3. Core Entities (Database Design)
+1. Teacher
+* Name
+* Teacher ID (Unique, used for login)
+* Password
+* Assigned Classes (one or multiple)
+2. Student
+* Name
+* Student ID (Unique, used for login)
+* Password
+* Class (only one class)
+3. Class
+* Class Name (Class 1, Class 2, etc.)
+4. Subject
+* Subject Name (Math, English, etc.)
+* Assigned Class
+Example:
+* Math → Class 1
+* Science → Class 2
+5. Result / Grades
+* Student ID
+* Subject
+* Marks / Grade
+* Teacher ID (who graded)
+
+
+
+
+4. Admin Panel Functionalities
+The Admin has full CRUD (Create, Read, Update, Delete) control.
+A. Manage Teachers
+Admin can:
+* Add teacher
+* Update teacher info
+* Delete teacher
+* View all teachers
+While adding a teacher:
+* Enter Name
+* Assign Teacher ID
+* Set Password
+* Assign one or more classes
+B. Manage Students
+Admin can:
+* Add student
+* Update student info
+* Delete student
+* View all students
+While adding a student:
+* Enter Name
+* Assign Student ID
+* Set Password
+* Assign Class
+C. Manage Classes
+* Add classes (Class 1, Class 2, etc.)
+* View classes
+D. Manage Subjects
+Admin can:
+* Add subject
+* Assign the subject to a class
+Example:
+* Add “Math”
+* Assign it to “Class 1.”
+E. Assign Teachers to Classes
+* A teacher can teach:
+   * One class OR multiple classes
+F. Assign Subjects to Classes
+* Each subject must belong to a class
+
+
+
+
+5. Teacher Functionalities
+After logging in, the teacher can:
+A. View Assigned Data
+* View assigned classes
+* View the subjects they are responsible for
+B. Grade Students
+A teacher can:
+* Select class
+* Select subject
+* Enter marks/grades for students in that class
+Important constraint:
+* A teacher can ONLY grade:
+   * Their assigned classes
+   * Their assigned subjects
+C. Update Password
+* A teacher can change their own password
+
+
+6. Student Functionalities
+After logging in, the student can:
+A. View Results
+* View grades for all subjects
+* See marks/grades assigned by teachers
+B. Update Password
+* Student can change their password
+
+
+
+
+7. Relationships (Very Important)
+To avoid confusion, here are the key relationships:
+* One Class → Many Students
+* One Class → Many Subjects
+* One Teacher → Many Classes
+* One Subject → One Class
+* One Student → Many Grades (one per subject)
+
+
+
+
+8. Example Flow
+Admin
+1. Adds Class 1
+2. Adds Subject “Math” → assigns to Class 1
+3. Adds Teacher T1 → assigns Class 1
+4. Adds Student S1 → assigns Class 1
+Teacher
+1. Logs in using Teacher ID
+2. Selects:
+   * Class 1
+   * Subject Math
+3. Enters marks for S1
+Student
+1. Logs in using Student ID
+2. Views result:
+   * Math → 85 marks
+
+
+
+
+9. Key Clarifications (Common Confusions)
+* Teacher ID and Student ID are used as usernames
+* Subjects are not global; they are tied to a class
+* Teachers don’t create data; they only grade
+* Admin controls everything else
+* Students cannot modify grades
